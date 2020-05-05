@@ -3,6 +3,7 @@ package GzFaulocalization;
 import com.gzoltar.core.GZoltar;
 import com.gzoltar.core.components.Statement;
 import com.gzoltar.core.instr.testing.TestResult;
+import spoon.reflect.code.CtStatement;
 
 import java.io.IOException;
 import java.util.ArrayList;

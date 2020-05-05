@@ -6,7 +6,7 @@ import spoon.MavenLauncher;
 import spoon.reflect.CtModel;
 
 public class MutationHelper {
-    public CtModel BuildModel(ProjectFacade projectFacade){
+    public static CtModel BuildModel(ProjectFacade projectFacade){
         Launcher spoon = new Launcher();
         spoon.addInputResource(projectFacade.getDirPath());
         spoon.getEnvironment().setNoClasspath(true);
