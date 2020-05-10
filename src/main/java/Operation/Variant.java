@@ -1,10 +1,21 @@
 package Operation;
 
+import ObjectGenProg.ProjectFacade;
 import spoon.reflect.CtModel;
 
 public class Variant {
+    private ProjectFacade projectFacade;
+
+    public ProjectFacade getProjectFacade() {
+        return projectFacade;
+    }
+
     private float fitnessPoint;
     private boolean isSOL = false;
+
+    public void setProjectFacade(ProjectFacade projectFacade) {
+        this.projectFacade = projectFacade;
+    }
 
     public CtModel getVariantModel() {
         return variantModel;

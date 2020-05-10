@@ -51,9 +51,11 @@ public class Faulocalizator {
         try {
             GZoltar gz = new GZoltar(pathToClassSource);
             for (String packageFolder : listToBuggyPackage) {
+                System.out.println("Package folder : " + packageFolder);
                 gz.addPackageToInstrument(packageFolder);
             }
             for (String testCase: listTestCase) {
+                System.out.println("tét case : " + testCase);
                 gz.addTestToExecute(testCase);
             }
             gz.run();

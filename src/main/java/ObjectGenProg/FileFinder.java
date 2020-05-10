@@ -74,4 +74,9 @@ public class FileFinder implements Filer {
         });
         return directories;
     }
+    public String GetAbsolutePath(String className) {
+        String reformatBuggyClassName = className.replace(".","\\") + ".java";
+        String prefix = "\\src\\main\\java";
+        return pathToProject + prefix + reformatBuggyClassName;
+    }
 }

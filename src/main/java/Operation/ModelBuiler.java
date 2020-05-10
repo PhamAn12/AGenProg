@@ -27,7 +27,7 @@ public class ModelBuiler {
         this.projectFacade = projectFacade;
     }
 
-    public void GetModelElements() {
+    public List<SpoonModelObj> GetModelElements() {
         List<SpoonModelObj> spoonModelObjList = new ArrayList<SpoonModelObj>();
         List<CtStatement> statementOfMethodList = new ArrayList<>();
         CtModel projectModelSM = MutationHelper.BuildModel(projectFacade);
@@ -58,12 +58,13 @@ public class ModelBuiler {
                 spoonModelObj.setListStatementSM(statementOfMethodList);
             }
             spoonModelObjList.add(spoonModelObj);
-            for(SpoonModelObj spO: spoonModelObjList){
-                spO.printSomething();
-                System.out.println("statement 13: " + spO.getStatementByLineNo(13));
-            }
+//            for(SpoonModelObj spO: spoonModelObjList){
+//                spO.printSomething();
+//                System.out.println("statement 13: " + spO.getStatementByLineNo(13));
+//            }
 
         }
+        return spoonModelObjList;
         //System.out.println(statementOfMethodList);
     }
 
@@ -73,7 +74,7 @@ public class ModelBuiler {
                 for (CtStatement childStsm : ((CtBlock) childStatement).getStatements()) {
 
                     if(!(childStsm instanceof CtIf)) {
-                        System.out.println("COOOOOOONNNN : " + childStsm);
+                        //System.out.println("COOOOOOONNNN : " + childStsm);
                         singleLine.add(childStsm);
                     }
                 }

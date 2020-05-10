@@ -7,6 +7,31 @@ public class SuspiciousCode {
     private String className;
     private String functionName;
     private int lineNo;
+
+    public String getClassName() {
+        return className;
+    }
+
+    public String getFunctionName() {
+        return functionName;
+    }
+
+    public List<Integer> getLineOfCodeExcute() {
+        return lineOfCodeExcute;
+    }
+
+    public Dictionary<Integer, Double> getMapLineToPoint() {
+        return mapLineToPoint;
+    }
+
+    public int getLineNo() {
+        return lineNo;
+    }
+
+    public double getSuspiciousScore() {
+        return suspiciousScore;
+    }
+
     private double suspiciousScore;
     private List<Integer> lineOfCodeExcute;
     private Dictionary<Integer,Double> mapLineToPoint;

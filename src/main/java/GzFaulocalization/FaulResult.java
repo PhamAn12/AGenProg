@@ -10,6 +10,15 @@ public class FaulResult {
     private int numOfTestPass;
     private int numOfTestFail;
     List<TestCaseObj> testSuite;
+
+    public List<SuspiciousCode> getListSuspiciousCode() {
+        return listSuspiciousCode;
+    }
+
+    public void setListSuspiciousCode(List<SuspiciousCode> listSuspiciousCode) {
+        this.listSuspiciousCode = listSuspiciousCode;
+    }
+
     Map<SuspiciousCode, Float> scoreOfLine;
     List<SuspiciousCode> listSuspiciousCode;
     public FaulResult(int totalTest, int numOfTestPass, int numOfTestFail,List<TestCaseObj> testSuite, List<SuspiciousCode> listSuspiciousCode) {

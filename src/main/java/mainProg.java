@@ -1,13 +1,17 @@
 import Fitness.Fitnesser;
 import Fitness.JunitExecer;
 import Fitness.TestCaseListener;
+import GzFaulocalization.SuspiciousCode;
 import Helper.MutationHelper;
 import Helper.TestCaseDetector;
 import JavaTest.TestTask;
 import ObjectGenProg.TestCase;
+import Population.FileModifiedDir;
+import Population.Variant;
 import com.gzoltar.core.GZoltar;
 import com.gzoltar.core.components.Statement;
 import com.gzoltar.core.instr.testing.TestResult;
+import net.openhft.compiler.CompilerUtils;
 import org.junit.internal.TextListener;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
@@ -18,6 +22,11 @@ import spoon.reflect.code.CtStatement;
 import spoon.reflect.declaration.CtMethod;
 import spoon.reflect.visitor.filter.TypeFilter;
 
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.List;
 import java.util.Map;
 
@@ -88,6 +97,49 @@ public class mainProg {
 //            System.out.println(comparent);
 //        }
         GenProg.MainThread();
+        // Prepare source somehow.
+//        String source = "package Buggy;\n" +
+//                "\n" +
+//                "public class MidFunction {\n" +
+//                "    public int findMid(int a, int b) {\n" +
+//                "        int r;\n" +
+//                "        if(a == 0) {\n" +
+//                "            System.out.print(b);\n" +
+//                "            r = b;\n" +
+//                "            return r;\n" +
+//                "        }\n" +
+//                "        while(b != 0) {\n" +
+//                "            if (a > b) {\n" +
+//                "                a = a - b;\n" +
+//                "            }\n" +
+//                "            else {\n" +
+//                "                b = b - a;\n" +
+//                "            }\n" +
+//                "        }\n" +
+//                "        System.out.print(b);\n" +
+//                "        r = a;\n" +
+//                "        return r;\n" +
+//                "    }\n" +
+//                "}\n";
+//
+//// Save source in .java file.
+//        File root = new File("/java"); // On Windows running on C:\, this is C:\java.
+//        File sourceFile = new File(root, "test/MidFunction.java");
+//        sourceFile.getParentFile().mkdirs();
+//        Files.write(sourceFile.toPath(), source.getBytes(StandardCharsets.UTF_8));
+//
+//// Compile source file.
+//        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+//        compiler.run(null, null, null, sourceFile.getPath());
+//        GZoltar gz = new GZoltar("D:\\Demo\\ClassFile");
+//        gz.addPackageToInstrument("Buggy");
+//        gz.addTestToExecute("TestBuggy.TestMidFuction1");
+//        gz.run();
+//        for (Statement gzoltarStatement: gz.getSuspiciousStatements()){
+//            System.out.println(gzoltarStatement);
+//
+//        }
+        //FileModifiedDir.moveFileDir("D:\\thsi\\projrepare\\hhh\\target\\classes\\Buggy\\MidFunction.class","D:\\thsi\\src\\main\\AutoGenerateFolder\\");
 
     }
 
