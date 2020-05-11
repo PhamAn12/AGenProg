@@ -34,6 +34,7 @@ public class ModelBuiler {
         List<CtClass> allClassList = projectModelSM.getElements(new TypeFilter<>(CtClass.class));
         for (CtClass classSM : allClassList) {
             SpoonModelObj spoonModelObj = new SpoonModelObj();
+            spoonModelObj.setSpoonCtModel(projectModelSM); // truong hop chi co 1 file buggy
             spoonModelObj.setClassSM(classSM);
             //System.out.println("Class name : " + classSM.getSimpleName());
             Set<CtMethod> listMethodOfEachClass = classSM.getAllMethods();

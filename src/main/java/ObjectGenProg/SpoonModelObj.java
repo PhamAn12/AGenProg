@@ -1,5 +1,6 @@
 package ObjectGenProg;
 
+import spoon.reflect.CtModel;
 import spoon.reflect.code.CtStatement;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtMethod;
@@ -11,6 +12,16 @@ public class SpoonModelObj {
     private CtClass classSM;
     private Set<CtMethod> listMethodSM;
     private List<CtStatement> listStatementSM;
+    private CtModel spoonCtModel;
+
+    public void setSpoonCtModel(CtModel spoonCtModel) {
+        this.spoonCtModel = spoonCtModel;
+    }
+
+    public CtModel getSpoonCtModel() {
+        return spoonCtModel;
+    }
+
     public SpoonModelObj (CtClass classSM, Set<CtMethod> listMethodSM, List<CtStatement> listStatementSM) {
         this.classSM = classSM;
         this.listMethodSM = listMethodSM;

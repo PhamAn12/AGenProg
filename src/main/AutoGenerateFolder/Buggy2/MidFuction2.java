@@ -7,6 +7,7 @@ public class MidFuction2 {
             System.out.print(b);
             r = b;
             r = r + 1;
+            r = r + 3;
             return r;
         }
         while(b != 0) {

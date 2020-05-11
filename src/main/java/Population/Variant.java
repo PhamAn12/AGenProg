@@ -64,5 +64,6 @@ public class Variant {
         System.out.println(className + " " + functionName);
         System.out.println(weightPath);
         System.out.println(context);
+        System.out.println(pathToVariant);
     }
 }

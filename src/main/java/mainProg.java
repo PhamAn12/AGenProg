@@ -5,7 +5,11 @@ import GzFaulocalization.SuspiciousCode;
 import Helper.MutationHelper;
 import Helper.TestCaseDetector;
 import JavaTest.TestTask;
+import ObjectGenProg.ProjectFacade;
+import ObjectGenProg.SpoonModelObj;
 import ObjectGenProg.TestCase;
+import Operation.ModelBuiler;
+import Population.ConvertJavaToClass;
 import Population.FileModifiedDir;
 import Population.Variant;
 import com.gzoltar.core.GZoltar;
@@ -140,7 +144,24 @@ public class mainProg {
 //
 //        }
         //FileModifiedDir.moveFileDir("D:\\thsi\\projrepare\\hhh\\target\\classes\\Buggy\\MidFunction.class","D:\\thsi\\src\\main\\AutoGenerateFolder\\");
+//        ConvertJavaToClass convertJavaToClass = new ConvertJavaToClass("D:\\thsi\\src\\main\\AutoGenerateFolder\\Buggy2\\MidFuction2.java");
+//        convertJavaToClass.GetClassFile();
+//        GZoltar gz = new GZoltar("D:\\thsi\\src\\main\\AutoGenerateFolder\\ClassPath");
+//        gz.addPackageToInstrument("Buggy2");
+//        gz.addTestToExecute("TestBuggy.TestMidFuction1");
+//        gz.addTestToExecute("TestBuggy2.TestMidFuction2");
+//        gz.run();
+//        for (Statement gzoltarStatement: gz.getSuspiciousStatements()){
+//            System.out.println(gzoltarStatement);
+//
+//        }
+        // chay tung file buggy
+//        ProjectFacade pF = new ProjectFacade("D:\\thsi\\src\\main\\AutoGenerateFolder\\Buggy2\\MidFuction2.java");
+//        ModelBuiler mb = new ModelBuiler(pF);
+//        List<SpoonModelObj> suspiciousCodeList = mb.GetModelElements();
+//        for(SpoonModelObj spoonModelObj : suspiciousCodeList) {
+//            spoonModelObj.printSomething();
+//        }
 
     }
-
 }

@@ -10,6 +10,7 @@ import Operation.InsertBefore;
 import Operation.ModelBuiler;
 import Operation.OperationSelect;
 import Population.AutoAddFile;
+import Population.PopulationInit;
 import Population.Variant;
 import Population.VariantFinder;
 import spoon.reflect.CtModel;
@@ -55,11 +56,18 @@ public class GenProg {
 //
 //  }}
         // Test Variant
-        AutoAddFile autoAddFile = new AutoAddFile(faulResult);
-        autoAddFile.CreateFolderForTest();
-        for(String path : pathTotestCaseFile) {
-            autoAddFile.CreateFolderTest(path);
-        }
+//        AutoAddFile autoAddFile = new AutoAddFile(faulResult);
+//        autoAddFile.CreateFolderForTest();
+//        for(String path : pathTotestCaseFile) {
+//            autoAddFile.CreateFolderTest(path);
+//        }
+        // Test VariantFinder
+        VariantFinder variantFinder = new VariantFinder(faulResult);
+        List<Variant> listStartVariant = variantFinder.InitFirstVariant();
+        for(Variant variant : listStartVariant) {
+            PopulationInit populationInit = new PopulationInit(1,variant);
+            populationInit.GetVariantModel();
 
+        }
     }
 }
