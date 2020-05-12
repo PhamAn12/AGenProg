@@ -28,12 +28,14 @@ public class SpoonModelObj {
         this.listStatementSM = listStatementSM;
     }
     public void printSomething(){
-        System.out.println("class name : " + classSM.getSimpleName());
-        System.out.println("list method name : " + listMethodSM);
-        System.out.println("list statements : " + listStatementSM);
-        for(CtStatement ctStatement : listStatementSM){
-            System.out.println("statement line : " + ctStatement.getPosition().getLine());
-        }
+//        System.out.println("class name : " + classSM.getSimpleName());
+//        System.out.println("list method name : " + listMethodSM);
+//        System.out.println("list statements : " + listStatementSM);
+//        for(CtStatement ctStatement : listStatementSM){
+//            System.out.println("statement line : " + ctStatement.getPosition().getLine());
+//        }
+
+        System.out.println("root package : " + spoonCtModel.getAllTypes());
     }
     public CtStatement getStatementByLineNo(int lineNo) {
         for(CtStatement ctStatement : listStatementSM) {

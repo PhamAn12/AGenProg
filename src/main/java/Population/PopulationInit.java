@@ -31,6 +31,7 @@ public class PopulationInit {
             }
             CtStatement statement6 = spoonModelObj.getStatementByLineNo(6);
             CtStatement statement10 = spoonModelObj.getStatementByLineNo(10);
+
             statement10.insertBefore(statement6);
         }
     }
