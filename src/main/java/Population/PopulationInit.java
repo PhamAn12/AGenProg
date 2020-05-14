@@ -3,7 +3,6 @@ package Population;
 import ObjectGenProg.ProjectFacade;
 import ObjectGenProg.SpoonModelObj;
 import Operation.ModelBuiler;
-import spoon.reflect.code.CtStatement;
 
 import java.util.List;
 
@@ -21,18 +20,25 @@ public class PopulationInit {
         ModelBuiler mb = new ModelBuiler(projectFacade);
         List<SpoonModelObj> spoonModelObjList =  mb.GetModelElements();
         for(SpoonModelObj spoonModelObj : spoonModelObjList) {
-            for (Integer key : firstVariant.getWeightPath().keySet()) {
-                System.out.println("all key : " + key);
-                if(firstVariant.getWeightPath().get(key) > 0) {
-                    System.out.println(spoonModelObj.getStatementByLineNo(key));
-
-                    System.out.println("specify key : " + key + " suspicious value : " + firstVariant.getWeightPath().get(key));
-                }
-            }
-            CtStatement statement6 = spoonModelObj.getStatementByLineNo(6);
-            CtStatement statement10 = spoonModelObj.getStatementByLineNo(10);
-
-            statement10.insertBefore(statement6);
+            MutationController mut = new MutationController(spoonModelObj,firstVariant);
+            System.out.println("TRUOC : ");
+            spoonModelObj.printSomething();
+            mut.ApplyMutation();
+            System.out.println("SAU : ");
+            spoonModelObj.printSomething();
+//            for (Integer key : firstVariant.getWeightPath().keySet()) {
+//                System.out.println("all key : " + key);
+//                if(firstVariant.getWeightPath().get(key) > 0) {
+//                    System.out.println(spoonModelObj.getStatementByLineNo(key));
+//
+//                    System.out.println("specify key : " + key + " suspicious value : " + firstVariant.getWeightPath().get(key));
+//                }
+//            }
+//            CtStatement statement6 = spoonModelObj.getStatementByLineNo(6);
+//            CtStatement statement10 = spoonModelObj.getStatementByLineNo(10);
+//
+//            statement10.insertBefore(statement6);
         }
     }
+
 }

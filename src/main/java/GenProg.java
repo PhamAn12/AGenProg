@@ -67,31 +67,31 @@ public class GenProg {
 //            autoAddFile.CreateFolderTest(path);
 //        }
         // Test SpoonModelObj
-        ProjectFacade fileBuggyPath = new ProjectFacade("D:\\thsi\\src\\main\\AutoGenerateFolder\\Buggy2\\MidFuction2.java");
-
-        ModelBuiler mb = new ModelBuiler(fileBuggyPath);
-        List<SpoonModelObj> spoonModelObjList = mb.GetModelElements();
-        for(SpoonModelObj spoonModelObj : spoonModelObjList) {
-
-            spoonModelObj.printSomething();
-            CtStatement statement1 = spoonModelObj.getStatementByLineNo(9);
-            CtStatement statement2 = spoonModelObj.getStatementByLineNo(11);
-            System.out.println("stsm 9 : " + statement1);
-            System.out.println("stsm 11 : " + statement2);
-            MutationOpInterface mutationOp = new ReplaceOp();
-            mutationOp.ApplyChange(statement1,statement2);
-
-            spoonModelObj.printSomething();
-//            statement2.insertBefore(statement1);
-//            spoonModelObj.printSomething();
-        }
-        // Test VariantFinder
-//        VariantFinder variantFinder = new VariantFinder(faulResult);
-//        List<Variant> listStartVariant = variantFinder.InitFirstVariant();
-//        for(Variant variant : listStartVariant) {
-//            PopulationInit populationInit = new PopulationInit(1,variant);
-//            populationInit.GetVariantModel();
+//        ProjectFacade fileBuggyPath = new ProjectFacade("D:\\thsi\\src\\main\\AutoGenerateFolder\\Buggy2\\MidFuction2.java");
 //
+//        ModelBuiler mb = new ModelBuiler(fileBuggyPath);
+//        List<SpoonModelObj> spoonModelObjList = mb.GetModelElements();
+//        for(SpoonModelObj spoonModelObj : spoonModelObjList) {
+//
+//            spoonModelObj.printSomething();
+//            CtStatement statement1 = spoonModelObj.getStatementByLineNo(9);
+//            CtStatement statement2 = spoonModelObj.getStatementByLineNo(11);
+//            System.out.println("stsm 9 : " + statement1);
+//            System.out.println("stsm 11 : " + statement2);
+//            MutationOpInterface mutationOp = new ReplaceOp();
+//            mutationOp.ApplyChange(statement1,statement2);
+//
+//            spoonModelObj.printSomething();
+////            statement2.insertBefore(statement1);
+////            spoonModelObj.printSomething();
 //        }
+        // Test VariantFinder
+        VariantFinder variantFinder = new VariantFinder(faulResult);
+        List<Variant> listStartVariant = variantFinder.InitFirstVariant();
+        for(Variant variant : listStartVariant) {
+            PopulationInit populationInit = new PopulationInit(1,variant);
+            populationInit.GetVariantModel();
+
+        }
     }
 }

@@ -15,22 +15,22 @@ public class OperationRamdomer {
     }
     public void ApplyRandomOp(){
         Random random = new Random();
-        int opSelected = random.nextInt(4);
+        int opSelected = random.nextInt(1);
         System.out.println("Number duoc chon : " + opSelected);
         if(opSelected == 0) {
-            InsertAfter insertAfter =(InsertAfter) mutationOpInterface;
+            InsertAfter insertAfter =new InsertAfter();
             insertAfter.ApplyChange(statementSource,statementModified);
         }
         else if(opSelected == 1) {
-            InsestBefore insestBefore = (InsestBefore) mutationOpInterface;
+            InsestBefore insestBefore = new InsestBefore();
             insestBefore.ApplyChange(statementSource,statementModified);
         }
         else if(opSelected == 2) {
-            ReplaceOp replaceOp = (ReplaceOp) mutationOpInterface;
+            ReplaceOp replaceOp = new ReplaceOp();
             replaceOp.ApplyChange(statementSource,statementModified);
         }
         else {
-            DeleteStament deleteStament = (DeleteStament) mutationOpInterface;
+            DeleteStament deleteStament = new DeleteStament();
             deleteStament.ApplyChange(null,statementModified);
         }
     }
