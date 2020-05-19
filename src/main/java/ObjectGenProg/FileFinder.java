@@ -59,7 +59,16 @@ public class FileFinder implements Filer {
         }
         return nameOfBuggyPackage;
     }
-
+    public List<String> listBuggyPackagePath(){
+        List<String> listPathToBuggyPackage = new ArrayList<String>();
+        String prefix = "\\src\\main\\java";
+        File[] directories = listFileInAPath(pathToProject + prefix);
+        for(File file : directories){
+            System.out.println(file.getAbsolutePath());
+            listPathToBuggyPackage.add(file.getAbsolutePath());
+        }
+        return listPathToBuggyPackage;
+    }
     @Override
     public String findClassPath() {
         String prefixClassFile ="\\target\\classes";
@@ -78,5 +87,22 @@ public class FileFinder implements Filer {
         String reformatBuggyClassName = className.replace(".","\\") + ".java";
         String prefix = "\\src\\main\\java";
         return pathToProject + prefix + reformatBuggyClassName;
+    }
+    public List<String> listTestCaseClassPath(){
+        String prefix = "\\target\\test-classes";
+        List<String> testCaseClassPath = new ArrayList<String>();
+        try (Stream<Path> walk = Files.walk(Paths.get(pathToProject + prefix))) {
+
+            List<String> result = walk.filter(Files::isRegularFile)
+                    .map(x -> x.toString()).collect(Collectors.toList());
+
+            for(String re : result) {
+                testCaseClassPath.add(re);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return testCaseClassPath;
     }
 }

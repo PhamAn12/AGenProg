@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Faulocalizator {
-    private String pathToClassSource;
-    private List<String> listTestCase;
-    private List<String> listToBuggyPackage;
+    protected String pathToClassSource;
+    protected List<String> listTestCase;
+    protected List<String> listToBuggyPackage;
     public Faulocalizator(String pathToClassSource,List<String> listTestCase,List<String> listToBuggyPackage) {
         this.pathToClassSource = pathToClassSource;
         this.listTestCase = listTestCase;
@@ -45,6 +45,7 @@ public class Faulocalizator {
     public FaulResult RankingBug() {
         List<SuspiciousCode> listSuspiciousCode = new ArrayList<SuspiciousCode>();
         List<TestCaseObj> testCaseObjs = new ArrayList<TestCaseObj>();
+        List<TestCaseObj> listTestCasePass = new ArrayList<>();
         int totalTestCase = 0;
         int totalTestPass = 0;
         int totalTestFail = 0;
@@ -64,10 +65,14 @@ public class Faulocalizator {
             for (TestResult tr : testResults) {
                 TestCaseObj testCaseObj = new TestCaseObj();
                 String testName = tr.getName().split("#")[0];
+
                 testCaseObj.setTestCaseName(tr.getName());
                 if(!tr.wasSuccessful()){
                     totalTestFail ++;
-                    testCaseObj.setNegativeTest(true);
+                    //testCaseObj.setNegativeTest(true);
+                }
+                else {
+                    listTestCasePass.add(testCaseObj);
                 }
                 //System.out.println("Test name la : " + testName + tr.getName());
                 testCaseObjs.add(testCaseObj);
@@ -85,6 +90,6 @@ public class Faulocalizator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return new FaulResult(totalTestCase,totalTestPass,totalTestFail,testCaseObjs,listSuspiciousCode);
+        return new FaulResult(totalTestCase,totalTestPass,totalTestFail,testCaseObjs,listSuspiciousCode,listTestCasePass);
     }
 }

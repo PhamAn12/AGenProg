@@ -1,15 +1,17 @@
 package Mutation;
 
+import Population.Variant;
 import spoon.reflect.code.CtStatement;
+import spoon.reflect.declaration.CtElement;
 
 import java.util.Random;
 
 public class OperationRamdomer {
-    private MutationOpInterface mutationOpInterface;
+    private Variant variant;
     private CtStatement statementSource;
     private CtStatement statementModified;
-    public OperationRamdomer(MutationOpInterface mutationOpInterface,CtStatement statementSource,CtStatement statementModified) {
-        this.mutationOpInterface = mutationOpInterface;
+    public OperationRamdomer(Variant variant,CtStatement statementSource,CtStatement statementModified) {
+        this.variant = variant;
         this.statementSource = statementSource;
         this.statementModified = statementModified;
     }
@@ -18,8 +20,10 @@ public class OperationRamdomer {
         int opSelected = random.nextInt(1);
         System.out.println("Number duoc chon : " + opSelected);
         if(opSelected == 0) {
-            InsertAfter insertAfter =new InsertAfter();
-            insertAfter.ApplyChange(statementSource,statementModified);
+
+            DeleteStament deleteStament = new DeleteStament();
+            deleteStament.ApplyChange(statementSource,null);
+
         }
         else if(opSelected == 1) {
             InsestBefore insestBefore = new InsestBefore();
@@ -30,8 +34,8 @@ public class OperationRamdomer {
             replaceOp.ApplyChange(statementSource,statementModified);
         }
         else {
-            DeleteStament deleteStament = new DeleteStament();
-            deleteStament.ApplyChange(null,statementModified);
+            InsertAfter insertAfter =new InsertAfter();
+            insertAfter.ApplyChange(statementSource,statementModified);
         }
     }
 

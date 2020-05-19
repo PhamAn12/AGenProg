@@ -22,7 +22,7 @@ public class MutationController {
         List<Integer> listLineNoNoBug = new ArrayList<>();
         MutationOpInterface mutationOpInterface = new MutationOpInterface();
         for (Integer key : variant.getWeightPath().keySet()) {
-            System.out.println("all key : " + key);
+            //System.out.println("all key : " + key);
             if (variant.getWeightPath().get(key) > 0) {
                 System.out.println(spoonModelObj.getStatementByLineNo(key));
                 listLineNoHasBug.add(key);
@@ -39,7 +39,7 @@ public class MutationController {
         CtStatement ctRandLineNoBug = spoonModelObj.getStatementByLineNo(randLineNoBug);
         System.out.println("dong loi : " + randLineHasBug + " la : " + ctRandLineHasBug);
         System.out.println("Dong ko loi : " + randLineNoBug + " la : " + ctRandLineNoBug);
-        OperationRamdomer randomMutationOp = new OperationRamdomer(mutationOpInterface,ctRandLineHasBug,ctRandLineNoBug);
+        OperationRamdomer randomMutationOp = new OperationRamdomer(null,ctRandLineHasBug,ctRandLineNoBug);
         randomMutationOp.ApplyRandomOp();
 
         //statement10.insertBefore(statement6);

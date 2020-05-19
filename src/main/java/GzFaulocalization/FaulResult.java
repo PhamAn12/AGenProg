@@ -9,8 +9,26 @@ public class FaulResult {
     private int totalTest;
     private int numOfTestPass;
     private int numOfTestFail;
+
+    public void setTestSuite(List<TestCaseObj> testSuite) {
+        this.testSuite = testSuite;
+    }
+
     List<TestCaseObj> testSuite;
 
+    public List<TestCaseObj> getTestSuite() {
+        return testSuite;
+    }
+
+    public List<TestCaseObj> getTestPassList() {
+        return testPassList;
+    }
+
+    public void setTestPassList(List<TestCaseObj> testPassList) {
+        this.testPassList = testPassList;
+    }
+
+    List<TestCaseObj> testPassList;
     public List<SuspiciousCode> getListSuspiciousCode() {
         return listSuspiciousCode;
     }
@@ -21,12 +39,20 @@ public class FaulResult {
 
     Map<SuspiciousCode, Float> scoreOfLine;
     List<SuspiciousCode> listSuspiciousCode;
-    public FaulResult(int totalTest, int numOfTestPass, int numOfTestFail,List<TestCaseObj> testSuite, List<SuspiciousCode> listSuspiciousCode) {
+    public FaulResult(int totalTest, int numOfTestPass, int numOfTestFail,List<TestCaseObj> testSuite,
+                      List<SuspiciousCode> listSuspiciousCode,List<TestCaseObj> listPassTest) {
         this.totalTest = totalTest;
         this.numOfTestPass = numOfTestPass;
         this.numOfTestFail = numOfTestFail;
         this.listSuspiciousCode = listSuspiciousCode;
         this.testSuite = testSuite;
+        this.testPassList = listPassTest;
+
+    }
+    public FaulResult(List<TestCaseObj> testCaseObjList, int numOfTestFail, int numOfTestPass) {
+        this.testSuite = testCaseObjList;
+        this.numOfTestFail = numOfTestFail;
+        this.numOfTestPass = numOfTestPass;
     }
     public void printResult(){
         System.out.println("total test : " + totalTest + " num of test pass : "
@@ -35,6 +61,16 @@ public class FaulResult {
             sc.printDataSuspicious();
         }
         for(TestCaseObj testCaseObj : testSuite){
+            testCaseObj.printTest();
+        }
+    }
+    public void printTestcaseResult(){
+        for(TestCaseObj testCaseObj : testSuite){
+            testCaseObj.printTest();
+        }
+    }
+    public void printTestPassResult() {
+        for (TestCaseObj testCaseObj : testPassList){
             testCaseObj.printTest();
         }
     }

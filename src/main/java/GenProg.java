@@ -1,22 +1,18 @@
+import Fitness.FitnessControler;
 import Fitness.Fitnesser;
-import GzFaulocalization.FaulFinder;
-import GzFaulocalization.FaulResult;
-import GzFaulocalization.Faulocalizator;
+import GzFaulocalization.*;
 import Helper.MutationHelper;
 import Mutation.InsertAfter;
 import Mutation.MutationOpInterface;
 import Mutation.ReplaceOp;
-import ObjectGenProg.FileFinder;
-import ObjectGenProg.GetBuggyPathFile;
-import ObjectGenProg.ProjectFacade;
-import ObjectGenProg.SpoonModelObj;
+import ObjectGenProg.*;
 import Operation.InsertBefore;
 import Operation.ModelBuiler;
 import Operation.OperationSelect;
-import Population.AutoAddFile;
-import Population.PopulationInit;
-import Population.Variant;
-import Population.VariantFinder;
+import Population.*;
+import com.gzoltar.core.GZoltar;
+import com.gzoltar.core.components.Statement;
+import com.gzoltar.core.instr.testing.TestResult;
 import spoon.reflect.CtModel;
 import spoon.reflect.code.CtStatement;
 import spoon.reflect.declaration.CtClass;
@@ -61,11 +57,15 @@ public class GenProg {
 //
 //  }}
         // Test AutoGenerateFile
-//        AutoAddFile autoAddFile = new AutoAddFile(faulResult);
-//        autoAddFile.CreateFolderForTest();
-//        for(String path : pathTotestCaseFile) {
-//            autoAddFile.CreateFolderTest(path);
+        AutoAddFile autoAddFile = new AutoAddFile(faulResult);
+        autoAddFile.CreateFolderForTest();
+//        // copy tét class file to autogenfolder
+//        for(String path : fileFinder.listTestCaseClassPath()) {
+//            System.out.println("PATH: " + path);
+//            autoAddFile.CreateTestClassPath(path);
 //        }
+        // test file finder
+        //System.out.println("Tét file finder :   " + fileFinder.listTestCaseClassPath());
         // Test SpoonModelObj
 //        ProjectFacade fileBuggyPath = new ProjectFacade("D:\\thsi\\src\\main\\AutoGenerateFolder\\Buggy2\\MidFuction2.java");
 //
@@ -86,12 +86,81 @@ public class GenProg {
 ////            spoonModelObj.printSomething();
 //        }
         // Test VariantFinder
-        VariantFinder variantFinder = new VariantFinder(faulResult);
-        List<Variant> listStartVariant = variantFinder.InitFirstVariant();
-        for(Variant variant : listStartVariant) {
-            PopulationInit populationInit = new PopulationInit(1,variant);
-            populationInit.GetVariantModel();
+//        VariantFinder variantFinder = new VariantFinder(faulResult);
+//        List<Variant> listStartVariant = variantFinder.InitFirstVariant();
+//        for(Variant variant : listStartVariant) {
+//            PopulationInit populationInit = new PopulationInit(2,variant);
+////            List<Variant> variantList = populationInit.GetVariantModel();
+////            for(Variant v : variantList) {
+////                v.printVariantContext();
+////            }
+//            FitnessControler fitnessControler = new FitnessControler(populationInit);
+//            fitnessControler.GetFitnessScore();
 
-        }
+//        }
+        // Test Convert Java to Class
+//        ConvertJavaToClass convertJavaToClass = new ConvertJavaToClass("D:\\thsi\\src\\main\\AutoGenerateFolder\\Buggy2\\MidFuction2.java");
+//        convertJavaToClass.GetClassFile();
+        // Tét gzonltar
+//        GZoltar gz = new GZoltar("D:\\thsi\\src\\main\\AutoGenerateFolder\\ClassPath");
+//        gz.addPackageToInstrument("Buggy2");
+//        gz.addTestToExecute("TestBuggy2.TestMidFuction2");
+//        gz.addTestToExecute("TestBuggy.TestMidFuction1");
+//        gz.run();
+//        for (Statement gzoltarStatement: gz.getSuspiciousStatements()){
+//            System.out.println(gzoltarStatement);
+//
+//        }
+//        List<TestResult> testResults = gz.getTestResults();
+//        for (TestResult tr : testResults){
+//            System.out.println(tr.getCoveredComponents());
+//        }
+        // Test FixFileFinder
+//        FixFileFinder fixFileFinder = new FixFileFinder();
+//        System.out.println(fixFileFinder.findClassPath());
+//        System.out.println(fixFileFinder.ListTestCasePackage());
+//        System.out.println(fixFileFinder.ListBuggyPackage());
+//        FaulocalizatorSmall faulocalizatorSmall = new FaulocalizatorSmall(pathToclassSource,listTestCase,listBuggyPackage);
+//        FaulResult testCaseresult = faulocalizatorSmall.GetTestCasePass();
+//        // Test faultResult ^^
+//        int numOfTestPass = testCaseresult.getNumOfTestPass();
+//        int numOfTestFail = testCaseresult.getNumOfTestFail();
+//        Fitnesser f = new Fitnesser(numOfTestPass,numOfTestFail);
+//        System.out.println("max point :  "+ f.getMaxPoint());
+//        testCaseresult.printTestcaseResult();
+//
+//        Faulocalizator faulocalizator1 = new Faulocalizator(pathToclassSource,listTestCase,listBuggyPackage);
+//        FaulResult testCaseresult1 = faulocalizator1.RankingBug();
+//        testCaseresult1.printTestPassResult();
+         //test finess function
+//        FixFileFinder fixFileFinder = new FixFileFinder();
+//        System.out.println(fixFileFinder.findClassPath());
+//        System.out.println(fixFileFinder.ListTestCasePackage());
+//        System.out.println(fixFileFinder.ListBuggyPackage());
+//        FaulocalizatorSmall faulocalizatorSmall = new FaulocalizatorSmall(fixFileFinder.findClassPath(),fixFileFinder.ListTestCasePackage(),fixFileFinder.ListBuggyPackage());
+//        FaulResult testCaseresult = faulocalizatorSmall.GetTestCasePass();
+//        // Test faultResult ^^
+//        int numOfTestPass = testCaseresult.getNumOfTestPass();
+//        int numOfTestFail = testCaseresult.getNumOfTestFail();
+//        Fitnesser f = new Fitnesser(numOfTestPass,numOfTestFail);
+//
+//        System.out.println("max point :  "+ f.getMaxPoint());
+//        System.out.println("orrighiin litst : ");
+//        testCaseresult.printTestcaseResult();
+//
+//        Faulocalizator faulocalizator1 = new Faulocalizator(fixFileFinder.findClassPath(),fixFileFinder.ListTestCasePackage(),fixFileFinder.ListBuggyPackage());
+//        FaulResult testCaseresult1 = faulocalizator1.RankingBug();
+//        System.out.println("CUrrentt litst : ");
+//        testCaseresult1.printTestPassResult();
+//        List<TestCaseObj> testCaseOriginList = testCaseresult.getTestSuite();
+//        List<TestCaseObj> testCaseCurrentList = testCaseresult1.getTestPassList();
+//        System.out.println("LIST orighin : " + testCaseOriginList);
+//        System.out.println("LIST current : " + testCaseCurrentList);
+//        Fitnesser ff = new Fitnesser(testCaseOriginList,testCaseCurrentList);
+//        System.out.println("fittnesspoint la : " + ff.getFinessPoint());
+        // test Population init
+
+
     }
+
 }

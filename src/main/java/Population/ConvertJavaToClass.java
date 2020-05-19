@@ -34,11 +34,14 @@ public class ConvertJavaToClass {
     public void GetClassFile() throws IOException {
         File root = new File ("D:\\thsi\\src\\main\\AutoGenerateFolder");
         File sourceFile = new File(root,"Buggy2/MidFuction2.java");
+        System.out.println("SFCOmplie : " + sourceFile.toPath());
         sourceFile.getParentFile().mkdirs();
         Files.write(sourceFile.toPath(),GetContextByPath(pathToJavaFile).getBytes(StandardCharsets.UTF_8));
 
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         compiler.run(null,null,null,sourceFile.getPath());
+        FileModifiedDir.moveFileDir("D:\\thsi\\src\\main\\AutoGenerateFolder\\Buggy2\\MidFuction2.class","D:\\thsi\\src\\main\\AutoGenerateFolder\\ClassPath\\");
+
     }
 
     public String GetContextByPath(String pathToFile) {
