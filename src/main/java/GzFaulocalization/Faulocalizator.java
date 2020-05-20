@@ -8,6 +8,7 @@ import spoon.reflect.code.CtStatement;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.*;
 
 public class Faulocalizator {
     protected String pathToClassSource;
@@ -59,37 +60,81 @@ public class Faulocalizator {
                 System.out.println("tét case : " + testCase);
                 gz.addTestToExecute(testCase);
             }
-            gz.run();
-            List<TestResult> testResults = gz.getTestResults();
-            totalTestCase = testResults.size();
-            for (TestResult tr : testResults) {
-                TestCaseObj testCaseObj = new TestCaseObj();
-                String testName = tr.getName().split("#")[0];
-
-                testCaseObj.setTestCaseName(tr.getName());
-                if(!tr.wasSuccessful()){
-                    totalTestFail ++;
-                    //testCaseObj.setNegativeTest(true);
+            //gz.run();
+            final Runnable stuffToDo = new Thread() {
+                @Override
+                public void run() {
+                    System.out.println("Dang chay trong thread day");
+                    gz.run();
+                    /* Do stuff here. */
                 }
-                else {
-                    listTestCasePass.add(testCaseObj);
-                }
-                //System.out.println("Test name la : " + testName + tr.getName());
-                testCaseObjs.add(testCaseObj);
+            };
+
+            final ExecutorService executor = Executors.newSingleThreadExecutor();
+            final Future future = executor.submit(stuffToDo);
+            executor.shutdown(); // This does not cancel the already-scheduled task.
+
+            try {
+                future.get(5, TimeUnit.SECONDS);
             }
-            totalTestPass = totalTestCase - totalTestFail;
-            for (Statement gzoltarStatement: gz.getSuspiciousStatements()){
-                SuspiciousCode suspiciousCode = new SuspiciousCode();
-                suspiciousCode.setClassName(gzoltarStatement.getClazz().getName());
-                suspiciousCode.setMethodName(gzoltarStatement.getMethod().getName());
-                suspiciousCode.setLineNo(gzoltarStatement.getLineNumber());
-                suspiciousCode.setSuspiciousScore(gzoltarStatement.getSuspiciousness());
-                listSuspiciousCode.add(suspiciousCode);
+            catch (InterruptedException ie) {
+                System.out.println("INTerrupt");
+                /* Handle the interruption. Or ignore it. */
+            }
+            catch (ExecutionException ee) {
+                System.out.println("some exception");
+                /* Handle the error. Or ignore it. */
+            }
+            catch (TimeoutException te) {
+                System.out.println("some time out");
+                /* Handle the timeout. Or ignore it. */
+            }
+            if (!executor.isTerminated())
+                executor.shutdownNow(); // If you want to stop the code that hasn't finished.
+
+            try {
+                System.out.println("Sutdong dcuaodflsfhlsfhskfsf" + gz.getTestResults());
+                if(gz.getTestResults() != null) {
+                    List<TestResult> testResults = gz.getTestResults();
+                    totalTestCase = testResults.size();
+                    for (TestResult tr : testResults) {
+                        TestCaseObj testCaseObj = new TestCaseObj();
+                        String testName = tr.getName().split("#")[0];
+
+                        testCaseObj.setTestCaseName(tr.getName());
+                        if (!tr.wasSuccessful()) {
+                            totalTestFail++;
+                            //testCaseObj.setNegativeTest(true);
+                        } else {
+                            listTestCasePass.add(testCaseObj);
+                        }
+                        //System.out.println("Test name la : " + testName + tr.getName());
+                        testCaseObjs.add(testCaseObj);
+                    }
+                    totalTestPass = totalTestCase - totalTestFail;
+                    for (Statement gzoltarStatement : gz.getSuspiciousStatements()) {
+                        SuspiciousCode suspiciousCode = new SuspiciousCode();
+                        suspiciousCode.setClassName(gzoltarStatement.getClazz().getName());
+                        suspiciousCode.setMethodName(gzoltarStatement.getMethod().getName());
+                        suspiciousCode.setLineNo(gzoltarStatement.getLineNumber());
+                        suspiciousCode.setSuspiciousScore(gzoltarStatement.getSuspiciousness());
+                        listSuspiciousCode.add(suspiciousCode);
+
+                    }
+                }else{
+                    System.out.println("Con card");
+                }
+            }
+            catch (NullPointerException e){
+                System.out.println("Exception in gz.run()");
+                //e.printStackTrace();
 
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return new FaulResult(totalTestCase,totalTestPass,totalTestFail,testCaseObjs,listSuspiciousCode,listTestCasePass);
     }
 }

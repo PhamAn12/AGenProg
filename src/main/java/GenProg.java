@@ -74,29 +74,30 @@ public class GenProg {
 //        for(SpoonModelObj spoonModelObj : spoonModelObjList) {
 //
 //            spoonModelObj.printSomething();
-//            CtStatement statement1 = spoonModelObj.getStatementByLineNo(9);
-//            CtStatement statement2 = spoonModelObj.getStatementByLineNo(11);
-//            System.out.println("stsm 9 : " + statement1);
+//            CtStatement statement1 = spoonModelObj.getStatementByLineNo(4);
+//            CtStatement statement2 = spoonModelObj.getStatementByLineNo(5);
+//            System.out.println("stsm 4 : " + statement1);
 //            System.out.println("stsm 11 : " + statement2);
 //            MutationOpInterface mutationOp = new ReplaceOp();
 //            mutationOp.ApplyChange(statement1,statement2);
 //
 //            spoonModelObj.printSomething();
-////            statement2.insertBefore(statement1);
-////            spoonModelObj.printSomething();
+//            //statement2.insertBefore(statement1);
+//            spoonModelObj.printSomething();
 //        }
-        // Test VariantFinder
+         //Test VariantFinder
 //        VariantFinder variantFinder = new VariantFinder(faulResult);
 //        List<Variant> listStartVariant = variantFinder.InitFirstVariant();
 //        for(Variant variant : listStartVariant) {
 //            PopulationInit populationInit = new PopulationInit(2,variant);
-////            List<Variant> variantList = populationInit.GetVariantModel();
-////            for(Variant v : variantList) {
-////                v.printVariantContext();
-////            }
+//            List<Variant> variantList = populationInit.GetVariantModel();
+//            for(Variant v : variantList) {
+//                v.printVariantContext();
+//                System.out.println("weigthPath : " + v.getWeightPath());
+//            }
 //            FitnessControler fitnessControler = new FitnessControler(populationInit);
 //            fitnessControler.GetFitnessScore();
-
+//
 //        }
         // Test Convert Java to Class
 //        ConvertJavaToClass convertJavaToClass = new ConvertJavaToClass("D:\\thsi\\src\\main\\AutoGenerateFolder\\Buggy2\\MidFuction2.java");

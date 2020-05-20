@@ -42,7 +42,22 @@ public class VariantFinder {
          }
          return listFirstVariant;
      }
+    public void AddWeightPath(Variant variant) throws IOException {
+        List<SuspiciousCode> suspiciousCodeList = faulResultofFaultLocalization.getListSuspiciousCode();
 
+        List<String> buggyClassName = new ArrayList<>();
+        for(SuspiciousCode sc : suspiciousCodeList) {
+            if(sc.getSuspiciousScore() > 0) {
+                String className = sc.getClassName();// class buggy name
+                if(!buggyClassName.contains(className)) {
+                    buggyClassName.add(className);
+                    variant.setWeightPath(GetWeightPath(className));
+                }
+
+            }
+        }
+
+    }
      public Map<Integer,Double> GetWeightPath(String classBuggyName) {
          Map<Integer,Double> weightPathDic = new HashMap<>();
          List<SuspiciousCode> suspiciousCodeList = faulResultofFaultLocalization.getListSuspiciousCode();

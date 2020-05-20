@@ -30,43 +30,49 @@ public class AutoAddFile {
             FileModifiedDir.moveFileDir(variant.getPathToVariant(), desPathForTest);
             String pathToNewBuggyFile = desPathForTest + variant.getClassName().replace(".", "\\") + ".java";
             System.out.println("patho to buggy file : " + pathToNewBuggyFile);
-            PopulationInit populationIniter = new PopulationInit(2, variant);
+            ConvertJavaToClass convertJavaToClass = new ConvertJavaToClass(pathToNewBuggyFile);
+            convertJavaToClass.GetClassFile();
+            FixFileFinder fixFileFinder = new FixFileFinder();
+            System.out.println(fixFileFinder.findClassPath());
+            System.out.println(fixFileFinder.ListTestCasePackage());
+            System.out.println(fixFileFinder.ListBuggyPackage());
+
+            FaulocalizatorSmall faulocalizatorSmall = new FaulocalizatorSmall(fixFileFinder.findClassPath(), fixFileFinder.ListTestCasePackage(), fixFileFinder.ListBuggyPackage());
+            FaulResult testCaseresult = faulocalizatorSmall.GetTestCaseList();
+            // origin list result test case
+            List<TestCaseObj> testCaseOriginList = testCaseresult.getTestSuite();
+            int numOfTestPass = testCaseresult.getNumOfTestPass();
+            int numOfTestFail = testCaseresult.getNumOfTestFail();
+            System.out.println("Test pass : " + numOfTestPass + "Test faild : " + numOfTestFail);
+
+
+            Fitnesser f = new Fitnesser(numOfTestPass, numOfTestFail);
+
+            System.out.println("max point :  " + f.getMaxPoint());
+            System.out.println("orrighiin litst : ");
+            testCaseresult.printTestcaseResult();
+            PopulationInit populationIniter = new PopulationInit(1, variant);
             List<Variant> listGenerateVariant = populationIniter.GetVariantModel();
             for (Variant vari : listGenerateVariant) {
-                System.out.println(vari.getContext());
+                System.out.println( "context of varrian ttt : " + vari.getContext());
                 FileWriter fileWriter = new FileWriter(pathToNewBuggyFile);
                 fileWriter.write(vari.getContext());
                 fileWriter.close();
-                ConvertJavaToClass convertJavaToClass = new ConvertJavaToClass(pathToNewBuggyFile);
-                convertJavaToClass.GetClassFile();
-
-
-                FixFileFinder fixFileFinder = new FixFileFinder();
-                System.out.println(fixFileFinder.findClassPath());
-                System.out.println(fixFileFinder.ListTestCasePackage());
-                System.out.println(fixFileFinder.ListBuggyPackage());
-                FaulocalizatorSmall faulocalizatorSmall = new FaulocalizatorSmall(fixFileFinder.findClassPath(), fixFileFinder.ListTestCasePackage(), fixFileFinder.ListBuggyPackage());
-                FaulResult testCaseresult = faulocalizatorSmall.GetTestCasePass();
-                // Test faultResult ^^
-                int numOfTestPass = testCaseresult.getNumOfTestPass();
-                int numOfTestFail = testCaseresult.getNumOfTestFail();
-                Fitnesser f = new Fitnesser(numOfTestPass, numOfTestFail);
-
-                System.out.println("max point :  " + f.getMaxPoint());
-                System.out.println("orrighiin litst : ");
-                testCaseresult.printTestcaseResult();
+                ConvertJavaToClass convertJavaToClassAfter = new ConvertJavaToClass(pathToNewBuggyFile);
+                convertJavaToClassAfter.GetClassFile();
 
                 Faulocalizator faulocalizator1 = new Faulocalizator(fixFileFinder.findClassPath(), fixFileFinder.ListTestCasePackage(), fixFileFinder.ListBuggyPackage());
                 FaulResult testCaseresult1 = faulocalizator1.RankingBug();
-                System.out.println("CUrrentt litst : ");
-                testCaseresult1.printTestPassResult();
-                List<TestCaseObj> testCaseOriginList = testCaseresult.getTestSuite();
+                VariantFinder variantFinder = new VariantFinder(testCaseresult1);
+                variantFinder.AddWeightPath(vari);
+                System.out.println("WWeitht path : " + vari.getWeightPath());
+//                System.out.println("CUrrentt litst : ");
+//                testCaseresult1.printTestPassResult();
+
                 List<TestCaseObj> testCaseCurrentList = testCaseresult1.getTestPassList();
-                System.out.println("LIST orighin : " + testCaseOriginList);
-                System.out.println("LIST current : " + testCaseCurrentList);
                 Fitnesser ff = new Fitnesser(testCaseOriginList, testCaseCurrentList);
                 System.out.println("fittnesspoint la : " + ff.getFinessPoint());
-
+                vari.setFinessScore(ff.getFinessPoint());
             }
 
         }

@@ -6,6 +6,15 @@ import java.util.Map;
 public class Variant {
     private String className;
 
+    public void setFinessScore(float finessScore) {
+        this.finessScore = finessScore;
+    }
+
+    public float getFinessScore() {
+        return finessScore;
+    }
+
+    private float finessScore;
     public String getFunctionName() {
         return functionName;
     }

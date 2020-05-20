@@ -7,12 +7,13 @@ import com.gzoltar.core.instr.testing.TestResult;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.*;
 
 public class FaulocalizatorSmall extends Faulocalizator {
     public FaulocalizatorSmall(String pathToClassSource, List<String> listTestCase, List<String> listToBuggyPackage) {
         super(pathToClassSource, listTestCase, listToBuggyPackage);
     }
-    public FaulResult GetTestCasePass() {
+    public FaulResult GetTestCaseList() {
         List<TestCaseObj> testCaseList = new ArrayList<>();
         int totalTestCase = 0;
         int totalTestPass = 0;
@@ -27,8 +28,10 @@ public class FaulocalizatorSmall extends Faulocalizator {
             for (String testCase: listTestCase) {
                 System.out.println("tét case : " + testCase);
                 gz.addTestToExecute(testCase);
+                System.out.println("tét case luc sau : " + testCase);
             }
             gz.run();
+
             List<TestResult> testResults = gz.getTestResults();
             totalTestCase = testResults.size();
             for (TestResult tr : testResults) {

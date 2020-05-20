@@ -29,6 +29,7 @@ public class MutationController {
                 System.out.println("specify key : " + key + " suspicious value : " + variant.getWeightPath().get(key));
             }
             else {
+                System.out.println("no bug key : " + key + " mo bug suspicious value : " + variant.getWeightPath().get(key));
                 listLineNoNoBug.add(key);
             }
         }

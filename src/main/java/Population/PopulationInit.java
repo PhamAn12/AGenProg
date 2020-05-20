@@ -1,9 +1,13 @@
 package Population;
 
+import GzFaulocalization.Faulocalizator;
+import GzFaulocalization.FaulocalizatorSmall;
+import ObjectGenProg.FixFileFinder;
 import ObjectGenProg.ProjectFacade;
 import ObjectGenProg.SpoonModelObj;
 import Operation.ModelBuiler;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +18,7 @@ public class PopulationInit {
         this.numofCandidate = numofCandidate;
         this.firstVariant = firstVariant;
     }
-    public List<Variant> GetVariantModel(){
+    public List<Variant> GetVariantModel() throws IOException {
         System.out.println(firstVariant.getPathToVariant());
         ProjectFacade projectFacade = new ProjectFacade(firstVariant.getPathToVariant());
         List<Variant> listVariant = new ArrayList<Variant>();
@@ -32,6 +36,10 @@ public class PopulationInit {
 //                System.out.println("SAU : ");
 //                spoonModelObj.printSomething();
                 variant.setContext("package Buggy2;\n" + spoonModelObj.getSpoonCtModel().getAllTypes().toString().substring(1,spoonModelObj.getSpoonCtModel().getAllTypes().toString().length()-1));
+                FixFileFinder fixFileFinder = new FixFileFinder();
+                Faulocalizator faulocalizator = new Faulocalizator(fixFileFinder.findClassPath(), fixFileFinder.ListTestCasePackage(), fixFileFinder.ListBuggyPackage());
+                VariantFinder variantFinder = new VariantFinder(faulocalizator.RankingBug());
+                variantFinder.AddWeightPath(variant);
                 listVariant.add(variant);
             }
 //            for (Integer key : firstVariant.getWeightPath().keySet()) {

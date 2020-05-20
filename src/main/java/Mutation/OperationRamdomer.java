@@ -17,7 +17,7 @@ public class OperationRamdomer {
     }
     public void ApplyRandomOp(){
         Random random = new Random();
-        int opSelected = random.nextInt(1);
+        int opSelected = random.nextInt(4);
         System.out.println("Number duoc chon : " + opSelected);
         if(opSelected == 0) {
 
