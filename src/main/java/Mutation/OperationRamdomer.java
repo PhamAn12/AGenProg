@@ -22,7 +22,7 @@ public class OperationRamdomer {
         if(opSelected == 0) {
 
             DeleteStament deleteStament = new DeleteStament();
-            deleteStament.ApplyChange(statementSource,null);
+            deleteStament.ApplyChange(statementModified,null);
 
         }
         else if(opSelected == 1) {

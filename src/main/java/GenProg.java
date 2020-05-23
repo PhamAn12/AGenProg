@@ -27,11 +27,11 @@ import java.util.List;
 public class GenProg {
     public static void MainThread() throws IOException {
         String pathToBuggyProject = "D:\\thsi\\projrepare\\hhh";
-        String pathToTest1 = "D:\\thsi\\projrepare\\hhh\\src\\test\\java\\TestBuggy\\TestMidFuction1.java";
-        String pathToTest2 = "D:\\thsi\\projrepare\\hhh\\src\\test\\java\\TestBuggy2\\TestMidFuction2.java";
-        List<String> pathTotestCaseFile = new ArrayList<String>();
-        pathTotestCaseFile.add(pathToTest1);
-        pathTotestCaseFile.add(pathToTest2);
+//        String pathToTest1 = "D:\\thsi\\projrepare\\hhh\\src\\test\\java\\TestBuggy\\TestMidFuction1.java";
+//        String pathToTest2 = "D:\\thsi\\projrepare\\hhh\\src\\test\\java\\TestBuggy2\\TestMidFuction2.java";
+//        List<String> pathTotestCaseFile = new ArrayList<String>();
+//        pathTotestCaseFile.add(pathToTest1);
+//        pathTotestCaseFile.add(pathToTest2);
         ProjectFacade projectFacade = new ProjectFacade(pathToBuggyProject);
         FileFinder fileFinder = new FileFinder(pathToBuggyProject);
         String pathToclassSource = fileFinder.findClassPath();
@@ -42,10 +42,10 @@ public class GenProg {
         FaulResult faulResult = faulocalizator.RankingBug();
 
         // Test faultResult ^^
-//        int numOfTestPass = faulResult.getNumOfTestPass();
-//        int numOfTestFail = faulResult.getNumOfTestFail();
-//        Fitnesser f = new Fitnesser(numOfTestPass,numOfTestFail);
-//        System.out.println("max point :  "+ f.getMaxPoint());
+        int numOfTestPass = faulResult.getNumOfTestPass();
+        int numOfTestFail = faulResult.getNumOfTestFail();
+        Fitnesser f = new Fitnesser(numOfTestPass,numOfTestFail);
+        System.out.println("max point :  "+ f.getMaxPoint());
 //        faulResult.printResult();
 //
 //        ModelBuiler md = new ModelBuiler(projectFacade);
@@ -57,9 +57,18 @@ public class GenProg {
 //
 //  }}
         // Test AutoGenerateFile
+//        AutoAddFile autoAddFile = new AutoAddFile(faulResult);
+//        List<Variant> listvariant = autoAddFile.CreateFolderForTest();
+//        for(Variant variant : listvariant) {
+//            System.out.println(variant.getFinessScore());
+//            System.out.println(variant.getContext());
+//        }
+        // Test mating pool
         AutoAddFile autoAddFile = new AutoAddFile(faulResult);
-        autoAddFile.CreateFolderForTest();
-//        // copy tét class file to autogenfolder
+        List<Variant> listVariant = autoAddFile.CreateFolderForTest().getVariantList();
+        MatingPool matingPool = new MatingPool(listVariant,autoAddFile.CreateFolderForTest());
+        matingPool.HandlePool();
+        // copy tét class file to autogenfolder
 //        for(String path : fileFinder.listTestCaseClassPath()) {
 //            System.out.println("PATH: " + path);
 //            autoAddFile.CreateTestClassPath(path);
@@ -72,7 +81,10 @@ public class GenProg {
 //        ModelBuiler mb = new ModelBuiler(fileBuggyPath);
 //        List<SpoonModelObj> spoonModelObjList = mb.GetModelElements();
 //        for(SpoonModelObj spoonModelObj : spoonModelObjList) {
-//
+//            VariantFinder variantFinder = new VariantFinder(faulResult);
+//            List<Variant> listStartVariant = variantFinder.InitFirstVariant();
+//            MutationController mc = new MutationController(spoonModelObj,listStartVariant.get(0));
+//            mc.ApplyMutation();
 //            spoonModelObj.printSomething();
 //            CtStatement statement1 = spoonModelObj.getStatementByLineNo(4);
 //            CtStatement statement2 = spoonModelObj.getStatementByLineNo(5);

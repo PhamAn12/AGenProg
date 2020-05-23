@@ -3,8 +3,8 @@ public class MidFuction2 {
     public int findMid(int a, int b) {
         int r;
         if (a == 0) {
+            java.lang.System.out.print(b);
             r = b;
-            r = r + 1;
             return r;
         }
         while (b != 0) {

@@ -34,13 +34,20 @@ public class MutationController {
             }
         }
         Random random = new Random();
-        int randLineHasBug = listLineNoHasBug.get(random.nextInt(listLineNoHasBug.size()));
-        int randLineNoBug = listLineNoNoBug.get(random.nextInt(listLineNoNoBug.size()));
-        CtStatement ctRandLineHasBug = spoonModelObj.getStatementByLineNo(randLineHasBug);
+        int randLineHasBug = 0;
+        int randLineNoBug = 0;
+        do{
+            randLineHasBug = listLineNoHasBug.get(random.nextInt(listLineNoHasBug.size()));
+        }while(randLineHasBug == 0);
+        do{
+            randLineNoBug = listLineNoNoBug.get(random.nextInt(listLineNoNoBug.size()));
+        }while(randLineNoBug == 13);
+        CtStatement ctRandLineHasBug = spoonModelObj.getStatementByLineNo(9);
         CtStatement ctRandLineNoBug = spoonModelObj.getStatementByLineNo(randLineNoBug);
         System.out.println("dong loi : " + randLineHasBug + " la : " + ctRandLineHasBug);
         System.out.println("Dong ko loi : " + randLineNoBug + " la : " + ctRandLineNoBug);
-        OperationRamdomer randomMutationOp = new OperationRamdomer(null,ctRandLineHasBug,ctRandLineNoBug);
+        OperationRamdomer randomMutationOp = new OperationRamdomer(null,ctRandLineNoBug,ctRandLineHasBug);
+
         randomMutationOp.ApplyRandomOp();
 
         //statement10.insertBefore(statement6);
