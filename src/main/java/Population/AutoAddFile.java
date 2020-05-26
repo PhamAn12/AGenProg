@@ -80,7 +80,7 @@ public class AutoAddFile {
             maxScoreFitness = f.getMaxPoint();
             System.out.println("orrighiin litst : ");
             testCaseresult.printTestcaseResult();
-            PopulationInit populationIniter = new PopulationInit(1, variant);
+            PopulationInit populationIniter = new PopulationInit(20, variant);
             listGenerateVariant = populationIniter.GetVariantModel();
             for (Variant vari : listGenerateVariant) {
                 //System.out.println( "context of varrian ttt : " + vari.getContext());

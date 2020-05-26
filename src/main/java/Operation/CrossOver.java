@@ -1,9 +1,17 @@
 package Operation;
 
+import Fitness.Fitnesser;
+import GzFaulocalization.FaulResult;
+import GzFaulocalization.Faulocalizator;
+import GzFaulocalization.TestCaseObj;
+import ObjectGenProg.FixFileFinder;
 import ObjectGenProg.ProjectFacade;
+import ObjectGenProg.ResultPopulation;
 import ObjectGenProg.SpoonModelObj;
+import Population.ConvertChildToClass;
 import Population.MatingPool;
 import Population.Variant;
+import Population.VariantFinder;
 import spoon.reflect.code.CtStatement;
 
 import java.io.FileWriter;
@@ -20,9 +28,11 @@ public class CrossOver {
     String pathToChild = "D:\\thsi\\src\\main\\AutoGenerateFolder\\CrosOver\\child.java";
     private Variant parent1;
     private Variant parent2;
-    public CrossOver(Variant parent1, Variant parent2) {
+    private ResultPopulation resultPopulation;
+    public CrossOver(Variant parent1, Variant parent2, ResultPopulation resultPopulation) {
         this.parent1 = parent1;
         this.parent2 = parent2;
+        this.resultPopulation = resultPopulation;
 
     }
     public Variant DoCross () throws IOException {
@@ -63,8 +73,9 @@ public class CrossOver {
         }
         WriteToFile(pathToChild,"package Buggy2;\n" +spoonModelObjs1.get(0).getSpoonCtModel().getAllTypes().toString().substring(1,spoonModelObjs1.get(0).getSpoonCtModel().getAllTypes().toString().length()-1));
         childVariant.setContext("package Buggy2;\n" +spoonModelObjs1.get(0).getSpoonCtModel().getAllTypes().toString().substring(1,spoonModelObjs1.get(0).getSpoonCtModel().getAllTypes().toString().length()-1));
-        childVariant.setFinessScore(0.03f);
-        childVariant.setWeightPath(parent1.getWeightPath());
+//        childVariant.setFinessScore(0.03f);
+//        childVariant.setWeightPath(parent1.getWeightPath());
+        SetFitnessPointAndWeightPath(childVariant);
         return childVariant;
     }
     void WriteToFile(String path,String context) throws IOException {
@@ -79,5 +90,20 @@ public class CrossOver {
         Object keyRandom = keysArray[random.nextInt(keysArray.length)];
         return (int)keyRandom;
     }
+    void SetFitnessPointAndWeightPath(Variant childVariant) throws IOException {
+        ConvertChildToClass convertChildToClass = new ConvertChildToClass("");
+        convertChildToClass.ConvertFile();
+        FixFileFinder fixFileFinder = new FixFileFinder();
+        Faulocalizator faulocalizator1 = new Faulocalizator(fixFileFinder.findClassPath(),
+                fixFileFinder.ListTestCasePackage(), fixFileFinder.ListBuggyPackage());
+        FaulResult testCaseresult1 = faulocalizator1.RankingBug();
+        VariantFinder variantFinder = new VariantFinder(testCaseresult1);
+        variantFinder.AddWeightPath(childVariant);
 
+        System.out.println("WEIGHTTTT PATHTHTHTHT : " + childVariant.getWeightPath());
+        List<TestCaseObj> testCaseCurrentList = testCaseresult1.getTestPassList();
+        Fitnesser ff = new Fitnesser(resultPopulation.getListTestCaseOfFirstVariant(), testCaseCurrentList);
+        System.out.println("fittnesspoint la : " + ff.getFinessPoint());
+        childVariant.setFinessScore(ff.getFinessPoint());
+    }
 }

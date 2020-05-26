@@ -64,4 +64,7 @@ public class FixFileFinder implements Filer {
         });
         return directories;
     }
+    public String rootPackage() {
+        return pathFixed;
+    }
 }

@@ -25,7 +25,7 @@ import java.util.stream.Stream;
 //        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 //        compiler.run(null, null, null, sourceFile.getPath());
 public class ConvertJavaToClass {
-    private String pathToJavaFile;
+    protected String pathToJavaFile;
     public ConvertJavaToClass(String pathToJavaFile) {
         this.pathToJavaFile = pathToJavaFile;
 
@@ -36,7 +36,7 @@ public class ConvertJavaToClass {
         File sourceFile = new File(root,"Buggy2/MidFuction2.java");
         System.out.println("SFCOmplie : " + sourceFile.toPath());
         sourceFile.getParentFile().mkdirs();
-        Files.write(sourceFile.toPath(),GetContextByPath(pathToJavaFile).getBytes(StandardCharsets.UTF_8));
+        Files.write(sourceFile.toPath(),GetContextByPath(sourceFile.getPath()).getBytes(StandardCharsets.UTF_8));
 
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         compiler.run(null,null,null,sourceFile.getPath());

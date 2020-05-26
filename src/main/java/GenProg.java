@@ -173,6 +173,9 @@ public class GenProg {
 //        System.out.println("fittnesspoint la : " + ff.getFinessPoint());
         // test Population init
 
+        // test convert child to class
+//        ConvertChildToClass convertChildToClass = new ConvertChildToClass("");
+//        convertChildToClass.ConvertFile();
 
     }
 
