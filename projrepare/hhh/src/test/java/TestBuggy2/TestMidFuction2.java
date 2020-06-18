@@ -1,9 +1,7 @@
 package TestBuggy2;
-
 import Buggy2.MidFuction2;
 import org.junit.Assert;
 import org.junit.Test;
-
 public class TestMidFuction2 {
     @Test
     public void mid_test_1(){

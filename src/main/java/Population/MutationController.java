@@ -12,6 +12,7 @@ import java.util.Random;
 public class MutationController {
     private SpoonModelObj spoonModelObj ;
     private Variant variant;
+    public int MLine = 13;
     public MutationController(SpoonModelObj spoonModelObj, Variant variant) {
         this.spoonModelObj = spoonModelObj;
         this.variant = variant;
@@ -41,7 +42,7 @@ public class MutationController {
         }while(randLineHasBug == 0);
         do{
             randLineNoBug = listLineNoNoBug.get(random.nextInt(listLineNoNoBug.size()));
-        }while(randLineNoBug == 13);
+        }while(randLineNoBug == MLine);
         CtStatement ctRandLineHasBug = spoonModelObj.getStatementByLineNo(randLineHasBug);
         CtStatement ctRandLineNoBug = spoonModelObj.getStatementByLineNo(randLineNoBug);
         System.out.println("dong loi : " + randLineHasBug + " la : " + ctRandLineHasBug);

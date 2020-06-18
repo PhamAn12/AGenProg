@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Random;
 
 public class MatingPool {
+    float mutRate = 0.05f;
     private List<Variant> listVariant;
     private ResultPopulation resultPopulation;
     public MatingPool (List<Variant> listVariant, ResultPopulation resultPopulation) {
@@ -30,8 +31,13 @@ public class MatingPool {
                 pool.add(variant);
             }
         }
-        for (int ii = 0; ii< 3; ii++)
+        for (int ii = 0; ii< 1; ii++)
         for(int i = 0; i< listVariant.size(); i++) {
+            System.out.println("Mating Pool Fitness: " + listVariant.get(i).getFinessScore());
+            if (listVariant.get(i).getFinessScore() == resultPopulation.getMaxFitnessScore()) {
+                System.out.println("solution found!");
+                break;
+            }
             int a = random.nextInt(pool.size());
             int b = 0;
             do{
@@ -42,7 +48,7 @@ public class MatingPool {
             System.out.println("A : " + a + " B : " + b);
             CrossOver crossOver = new CrossOver(parentA,parentB,resultPopulation);
             Variant childvariant = crossOver.DoCross();
-            if(random.nextFloat() < 0.05)
+            if(random.nextFloat() < mutRate)
                 AppliedMutation(childvariant);
             System.out.println("fitness score of child variant : " + childvariant.getFinessScore());
             System.out.println("fitness score of max point : " + resultPopulation.getMaxFitnessScore());
@@ -64,11 +70,7 @@ public class MatingPool {
             if(listVariant.get(i).isSOL()) {
                 System.out.println("solution found !");
                 break;
-            }else{
-                System.out.println("solution not found !");
             }
-
-
         }
 //        System.out.println("size pool : " + pool.size());
 //        for(int i = 0; i < pool.size(); i++) {
