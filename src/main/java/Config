@@ -1,5 +1,5 @@
 pathToBuggyProject = "path/To/BuggyProject"
-population size = 10
+populationSize = 10
 numOfGeneration = 2
 WNRate = 1
 WPRate = 0.02

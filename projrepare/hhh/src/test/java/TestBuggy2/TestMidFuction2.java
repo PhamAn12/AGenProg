@@ -32,7 +32,7 @@ public class TestMidFuction2 {
         Assert.assertEquals(expectedResult,result);
     }
     @Test
-    public void mid_test_6(){
+    public void mid_test_5(){
         int expectedResult = 1;
         MidFuction2 mid = new MidFuction2();
         int result = mid.findMid(7,3);

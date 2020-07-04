@@ -31,6 +31,7 @@ public class MatingPool {
                 pool.add(variant);
             }
         }
+        System.out.println("pop size :" + listVariant.size() + "max point :" + resultPopulation.getMaxFitnessScore());
         for (int ii = 0; ii< 1; ii++)
         for(int i = 0; i< listVariant.size(); i++) {
             System.out.println("Mating Pool Fitness: " + listVariant.get(i).getFinessScore());

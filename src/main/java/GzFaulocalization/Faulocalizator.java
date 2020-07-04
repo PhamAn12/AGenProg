@@ -53,9 +53,11 @@ public class Faulocalizator {
         try {
             GZoltar gz = new GZoltar(pathToClassSource);
             for (String packageFolder : listToBuggyPackage) {
+                System.out.println("PF : " + packageFolder);
                 gz.addPackageToInstrument(packageFolder);
             }
             for (String testCase: listTestCase) {
+                System.out.println("TC : " + testCase);
                 gz.addTestToExecute(testCase);
             }
             gz.run();
@@ -116,6 +118,7 @@ public class Faulocalizator {
                         suspiciousCode.setMethodName(gzoltarStatement.getMethod().getName());
                         suspiciousCode.setLineNo(gzoltarStatement.getLineNumber());
                         suspiciousCode.setSuspiciousScore(gzoltarStatement.getSuspiciousness());
+                        //System.out.println("CCC : " + gzoltarStatement.getSuspiciousness());
                         listSuspiciousCode.add(suspiciousCode);
 
                     }

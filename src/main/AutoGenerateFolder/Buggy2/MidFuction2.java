@@ -1,23 +1,22 @@
 package Buggy2;
-
 public class MidFuction2 {
     public int findMid(int a, int b) {
         int r;
-        if(a == 0) {
-            System.out.print(b);
+        if (a == 0) {
+            java.lang.System.out.print(b);
             r = b;
             r = r + 1;
             return r;
+            return r;
         }
-        while(b != 0) {
+        while (b != 0) {
             if (a > b) {
                 a = a - b;
-            }
-            else {
+            } else {
                 b = b - a;
             }
-        }
-        System.out.print(b);
+        } 
+        java.lang.System.out.print(b);
         r = a;
         return r;
     }

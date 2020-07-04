@@ -103,7 +103,7 @@ public class CrossOver {
         System.out.println("WEIGHTTTT PATHTHTHTHT : " + childVariant.getWeightPath());
         List<TestCaseObj> testCaseCurrentList = testCaseresult1.getTestPassList();
         Fitnesser ff = new Fitnesser(resultPopulation.getListTestCaseOfFirstVariant(), testCaseCurrentList);
-        System.out.println("fittnesspoint la : " + ff.getFinessPoint());
+        System.out.println("fittnesspoint trong cross over la : " + ff.getFinessPoint());
         childVariant.setFinessScore(ff.getFinessPoint());
     }
 }

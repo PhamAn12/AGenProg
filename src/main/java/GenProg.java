@@ -66,6 +66,7 @@ public class GenProg {
         // Test mating pool
         AutoAddFile autoAddFile = new AutoAddFile(faulResult);
         List<Variant> listVariant = autoAddFile.CreateFolderForTest().getVariantList();
+        System.out.println("Size of list variant : " + listVariant.size());
         MatingPool matingPool = new MatingPool(listVariant,autoAddFile.CreateFolderForTest());
         matingPool.HandlePool();
         // copy tét class file to autogenfolder

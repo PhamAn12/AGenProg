@@ -24,6 +24,7 @@ public class VariantFinder {
              if(sc.getSuspiciousScore() > 0) {
                  Variant variant = new Variant();
                  String className = sc.getClassName();// class buggy name
+                //System.out.println("Class name" + className);
                  if(!buggyClassName.contains(className)) {
                      buggyClassName.add(className);
 
@@ -70,6 +71,7 @@ public class VariantFinder {
          return weightPathDic;
      }
      public String GetContextOfVariant(String pathToBuggyFile) throws IOException {
+         System.out.println(pathToBuggyFile);
          Path path = Paths.get(pathToBuggyFile);
          List<String> listStsms = Files.readAllLines(path);
          return listStsms.toString();

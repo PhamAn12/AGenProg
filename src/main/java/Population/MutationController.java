@@ -43,7 +43,7 @@ public class MutationController {
         do{
             randLineNoBug = listLineNoNoBug.get(random.nextInt(listLineNoNoBug.size()));
         }while(randLineNoBug == MLine);
-        CtStatement ctRandLineHasBug = spoonModelObj.getStatementByLineNo(randLineHasBug);
+        CtStatement ctRandLineHasBug = spoonModelObj.getStatementByLineNo(9);
         CtStatement ctRandLineNoBug = spoonModelObj.getStatementByLineNo(randLineNoBug);
         System.out.println("dong loi : " + randLineHasBug + " la : " + ctRandLineHasBug);
         System.out.println("Dong ko loi : " + randLineNoBug + " la : " + ctRandLineNoBug);
