@@ -1,32 +1,15 @@
-import Fitness.FitnessControler;
 import Fitness.Fitnesser;
 import GzFaulocalization.*;
-import Helper.MutationHelper;
-import Mutation.InsertAfter;
-import Mutation.MutationOpInterface;
-import Mutation.ReplaceOp;
 import ObjectGenProg.*;
-import Operation.InsertBefore;
-import Operation.ModelBuiler;
-import Operation.OperationSelect;
 import Population.*;
-import com.gzoltar.core.GZoltar;
-import com.gzoltar.core.components.Statement;
-import com.gzoltar.core.instr.testing.TestResult;
-import spoon.reflect.CtModel;
-import spoon.reflect.code.CtStatement;
-import spoon.reflect.declaration.CtClass;
-import spoon.reflect.declaration.CtMethod;
-import spoon.reflect.visitor.filter.TypeFilter;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class GenProg {
     public static void MainThread() throws IOException {
-        String pathToBuggyProject = "D:\\thsi\\projrepare\\hhh";
+        String pathToBuggyProject = ConfigController.getInputParam().getPathToProject();
 //        String pathToTest1 = "D:\\thsi\\projrepare\\hhh\\src\\test\\java\\TestBuggy\\TestMidFuction1.java";
 //        String pathToTest2 = "D:\\thsi\\projrepare\\hhh\\src\\test\\java\\TestBuggy2\\TestMidFuction2.java";
 //        List<String> pathTotestCaseFile = new ArrayList<String>();
@@ -65,10 +48,15 @@ public class GenProg {
 //        }
         // Test mating pool
         AutoAddFile autoAddFile = new AutoAddFile(faulResult);
-        List<Variant> listVariant = autoAddFile.CreateFolderForTest().getVariantList();
-        System.out.println("Size of list variant : " + listVariant.size());
-        MatingPool matingPool = new MatingPool(listVariant,autoAddFile.CreateFolderForTest());
-        matingPool.HandlePool();
+        if(autoAddFile.CreateFolderForTest().getMaxFitnessScore() != -1) {
+            List<Variant> listVariant = autoAddFile.CreateFolderForTest().getVariantList();
+            System.out.println("Size of list variant : " + listVariant.size());
+            MatingPool matingPool = new MatingPool(listVariant, autoAddFile.CreateFolderForTest());
+            matingPool.HandlePool();
+        }
+        else {
+            System.out.println("Dung chuong trinh");
+        }
         // copy tét class file to autogenfolder
 //        for(String path : fileFinder.listTestCaseClassPath()) {
 //            System.out.println("PATH: " + path);

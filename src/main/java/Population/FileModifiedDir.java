@@ -1,8 +1,13 @@
 package Population;
 
 
-import java.io.*;
+import org.apache.commons.io.FileUtils;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+
+import static java.nio.file.StandardCopyOption.*;
 public class FileModifiedDir {
 
     public static void moveFileDir(String sourceDir,String destiantionDir) {
@@ -59,6 +64,17 @@ public class FileModifiedDir {
             System.out.println("File is copied successful!");
         }
         catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public static void moveFolder (String source, String destination) {
+
+        File srcDir = new File(source);
+        File destDir = new File(destination);
+
+        try {
+            FileUtils.copyDirectory(srcDir, destDir);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

@@ -30,7 +30,36 @@ public class FaulocalizatorSmall extends Faulocalizator {
                 gz.addTestToExecute(testCase);
                 System.out.println("tét case luc sau : " + testCase);
             }
-            gz.run();
+            //gz.run();
+            final Runnable stuffToDo = new Thread() {
+                @Override
+                public void run() {
+                    System.out.println("Dang chay trong thread day");
+                    gz.run();
+                    /* Do stuff here. */
+                }
+            };
+            final ExecutorService executor = Executors.newSingleThreadExecutor();
+            final Future future = executor.submit(stuffToDo);
+            executor.shutdown(); // This does not cancel the already-scheduled task.
+
+            try {
+                future.get(5, TimeUnit.SECONDS);
+            }
+            catch (InterruptedException ie) {
+                System.out.println("INTerrupt");
+                /* Handle the interruption. Or ignore it. */
+            }
+            catch (ExecutionException ee) {
+                System.out.println("some exception");
+                /* Handle the error. Or ignore it. */
+            }
+            catch (TimeoutException te) {
+                System.out.println("some time out");
+                /* Handle the timeout. Or ignore it. */
+            }
+            if (!executor.isTerminated())
+                executor.shutdownNow(); // If you want to stop the code that hasn't finished.
 
             List<TestResult> testResults = gz.getTestResults();
             totalTestCase = testResults.size();

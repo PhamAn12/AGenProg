@@ -101,6 +101,7 @@ public class mainProg {
 //            System.out.println(comparent);
 //        }
         GenProg.MainThread();
+        //ObjectGenProg.ConfigController.getInputParam().printsmst();
         // Prepare source somehow.
 //        String source = "package Buggy;\n" +
 //                "\n" +

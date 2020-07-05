@@ -15,7 +15,7 @@ public class ResultPopulation {
         this.listTestCaseOfFirstVariant = listTestCaseOfFirstVariant;
         this.variantList = variantList;
     }
-
+    public ResultPopulation() {}
     public void setMaxFitnessScore(float maxFitnessScore) {
         this.maxFitnessScore = maxFitnessScore;
     }

@@ -5,6 +5,7 @@ import GzFaulocalization.FaulResult;
 import GzFaulocalization.Faulocalizator;
 import GzFaulocalization.FaulocalizatorSmall;
 import GzFaulocalization.TestCaseObj;
+import ObjectGenProg.ConfigController;
 import ObjectGenProg.FixFileFinder;
 import ObjectGenProg.ResultPopulation;
 
@@ -80,7 +81,7 @@ public class AutoAddFile {
             maxScoreFitness = f.getMaxPoint();
             System.out.println("orrighiin litst : ");
             testCaseresult.printTestcaseResult();
-            PopulationInit populationIniter = new PopulationInit(2, variant);
+            PopulationInit populationIniter = new PopulationInit(ConfigController.getInputParam().getPopulationSize(), variant);
             listGenerateVariant = populationIniter.GetVariantModel();
             for (Variant vari : listGenerateVariant) {
                 //System.out.println( "context of varrian ttt : " + vari.getContext());
@@ -102,6 +103,11 @@ public class AutoAddFile {
                 Fitnesser ff = new Fitnesser(testCaseOriginList, testCaseCurrentList);
                 System.out.println("fittnesspoint la : " + ff.getFinessPoint());
                 vari.setFinessScore(ff.getFinessPoint());
+                if(ff.getFinessPoint() == maxScoreFitness) {
+                    System.out.println("Soulutrion found !");
+                    System.out.println(vari.getContext());
+                    return new ResultPopulation(-1, testCaseOriginList,listGenerateVariant);
+                }
             }
 
         }

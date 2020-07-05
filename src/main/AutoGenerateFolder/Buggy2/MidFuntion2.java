@@ -1,11 +1,11 @@
 package Buggy2;
-public class MidFuction2 {
+public class MidFuntion2 {
     public java.util.Scanner scanner;
 
     public java.lang.String output = "";
 
     public static void main(java.lang.String[] args) throws java.lang.Exception {
-        Buggy2.MidFuction2 mainClass = new Buggy2.MidFuction2();
+        Buggy2.MidFuntion2 mainClass = new Buggy2.MidFuntion2();
         java.lang.String output;
         if (args.length > 0) {
             mainClass.scanner = new java.util.Scanner(args[0]);

@@ -60,7 +60,7 @@ public class Faulocalizator {
                 System.out.println("TC : " + testCase);
                 gz.addTestToExecute(testCase);
             }
-            gz.run();
+            //gz.run();
             final Runnable stuffToDo = new Thread() {
                 @Override
                 public void run() {

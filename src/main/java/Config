@@ -1,6 +1,4 @@
-pathToBuggyProject = "path/To/BuggyProject"
-populationSize = 10
+pathToBuggyProject = D:\digitsc5d8
+populationSize = 1
 numOfGeneration = 2
-WNRate = 1
-WPRate = 0.02
 WMutationRate = 0.1
