@@ -17,23 +17,26 @@ public class ConfigController {
                 String data = myReader.nextLine();
                 if(data.startsWith("pathToBuggyProject = ")) {
                     configer.setPathToProject(data.substring(21));
-                    System.out.println(data.substring(21));
+
                 }
                 else if(data.startsWith("populationSize = ")) {
                     configer.setPopulationSize(Integer.parseInt(data.substring(17)));
-                    System.out.println(data.substring(17));
+
                 }
                 else if (data.startsWith("numOfGeneration = ")) {
                     configer.setNumOfGeneration(Integer.parseInt(data.substring(18)));
-                    System.out.println(data.substring(18));
+
                 }
                 else if (data.startsWith("WMutationRate = ")) {
                     configer.setMutationRate(Float.parseFloat(data.substring(16)));
-                    System.out.println(data.substring(16));
+
                 }
                 else if (data.startsWith("pathToTestFile = ")){
                     configer.setPathToTestFile(data.substring(17));
-                    System.out.println(data.substring(17));
+
+                }
+                else if (data.startsWith("BuggyLine = ")) {
+                    configer.setBuggyLine(Integer.parseInt(data.substring(12)));
                 }
 
             }

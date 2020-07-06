@@ -36,6 +36,7 @@ public class MatingPool {
         for(int i = 0; i< listVariant.size(); i++) {
             System.out.println("Mating Pool Fitness: " + listVariant.get(i).getFinessScore());
             if (listVariant.get(i).getFinessScore() == resultPopulation.getMaxFitnessScore()) {
+                System.out.println(listVariant.get(i).getContext());
                 System.out.println("solution found!");
                 break;
             }

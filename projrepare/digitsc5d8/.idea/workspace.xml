@@ -1,56 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a7f26ec-fc80-403e-833f-54d9084667bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/digitsc5d8.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hhh/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hhh/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hhh/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hhh/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hhh/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hhh/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hhh/src/main/java/Buggy2/MidFuction2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hhh/src/main/java/Buggy2/MidFuction2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hhh/src/test/java/TestBuggy2/TestMidFuction2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hhh/src/test/java/TestBuggy2/TestMidFuction2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hhh/target/classes/TestBuggy2/TestMidFuction2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hhh/target/classes/TestBuggy2/TestMidFuction2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hhh/target/test-classes/TestBuggy/TestMidFuction1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hhh/target/test-classes/TestBuggy2/TestMidFuction2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/AutoGenerateFolder/Buggy2/MidFuction2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/AutoGenerateFolder/Buggy2/MidFuction2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/java/Config" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/Config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/java/GenProg.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/GenProg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/java/GzFaulocalization/Faulocalizator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/GzFaulocalization/Faulocalizator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/java/Operation/CrossOver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/Operation/CrossOver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/java/Population/AutoAddFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/Population/AutoAddFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/java/Population/MatingPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/Population/MatingPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/java/Population/MutationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/Population/MutationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/java/Population/VariantFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/Population/VariantFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../target/classes/GenProg.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/GenProg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../target/classes/GzFaulocalization/Faulocalizator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/GzFaulocalization/Faulocalizator.class" afterDir="false" />
-    </list>
+    <list default="true" id="7943d931-a0f4-4fbd-a488-44b27dd1858c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -59,34 +14,23 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="ProjectId" id="1difmXNqMSNNsNMW5BfPP931Hxy" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1eGzD3lz6Mu4pXH3KFUXpZqwnvp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\thsi\projrepare\digitsc5d8\target\classes" />
+      <recent name="D:\digitsc5d8\target\classes" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestMidFuction1">
+  <component name="RunManager" selected="JUnit.TestMidFuction2">
     <configuration name="MidFuction2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Buggy2.MidFuction2" />
       <module name="digitsc5d8" />
@@ -100,31 +44,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMidFuction1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hhh" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestBuggy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestBuggy" />
-      <option name="MAIN_CLASS_NAME" value="TestBuggy.TestMidFuction1" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestMidFuction2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hhh" />
+      <module name="digitsc5d8" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="TestBuggy2.*" />
+          <option name="PATTERN" value="TestBuggyDigits.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="TestBuggy2" />
-      <option name="MAIN_CLASS_NAME" value="TestBuggy2.TestMidFuction2" />
+      <option name="PACKAGE_NAME" value="TestBuggyDigits" />
+      <option name="MAIN_CLASS_NAME" value="TestBuggyDigits.TestMidFuction2" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -132,7 +61,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestMidFuction1" />
         <item itemvalue="JUnit.TestMidFuction2" />
         <item itemvalue="Application.MidFuction2" />
       </list>
@@ -143,141 +71,45 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9a7f26ec-fc80-403e-833f-54d9084667bc" name="Default Changelist" comment="" />
-      <created>1587995228229</created>
+      <changelist id="7943d931-a0f4-4fbd-a488-44b27dd1858c" name="Default Changelist" comment="" />
+      <created>1593962594602</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1587995228229</updated>
-      <workItem from="1587995235260" duration="900000" />
-      <workItem from="1592913004496" duration="974000" />
-      <workItem from="1592992529452" duration="85000" />
-      <workItem from="1592994786285" duration="124000" />
-      <workItem from="1593785295552" duration="1972000" />
-      <workItem from="1593789361583" duration="2728000" />
-      <workItem from="1593836154513" duration="720000" />
+      <updated>1593962594602</updated>
+      <workItem from="1593962597849" duration="2588000" />
+      <workItem from="1593966783159" duration="1125000" />
+      <workItem from="1593968320274" duration="262000" />
+      <workItem from="1593999059821" duration="2577000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="286" y="0" key="#TestMidFuction1" timestamp="1593791540149">
+    <state x="296" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593964551597">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="286" y="0" key="#TestMidFuction1/0.0.1366.728@0.0.1366.728" timestamp="1593791540149" />
-    <state x="286" y="0" key="#TestMidFuction2" timestamp="1593791455431">
+    <state x="296" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1593964551597" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1594004751315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="286" y="0" key="#TestMidFuction2/0.0.1366.728@0.0.1366.728" timestamp="1593791455431" />
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593787194334">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594004751315" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1594004751315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1593787194334" />
-    <state width="1323" height="127" key="GridCell.Tab.0.bottom" timestamp="1593792458263">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594004751315" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1594004751315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="127" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593792458263" />
-    <state width="1323" height="127" key="GridCell.Tab.0.center" timestamp="1593792458263">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594004751315" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1594004751315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="127" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593792458263" />
-    <state width="1323" height="127" key="GridCell.Tab.0.left" timestamp="1593792458262">
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594004751315" />
+    <state x="213" y="18" key="Maven.ArtifactSearchDialog" timestamp="1593963036574">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="127" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593792458262" />
-    <state width="1323" height="127" key="GridCell.Tab.0.right" timestamp="1593792458263">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="127" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593792458263" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1593836711192">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1593836711192" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>hhh</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <state x="213" y="18" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1593963036574" />
   </component>
 </project>

@@ -43,9 +43,13 @@ public class MutationController {
         do{
             randLineNoBug = listLineNoNoBug.get(random.nextInt(listLineNoNoBug.size()));
         }while(randLineNoBug == MLine);
-        CtStatement ctRandLineHasBug = spoonModelObj.getStatementByLineNo(40);
+//        if(LineLocalization.getBuggyLine() != -1) {
+//            randLineHasBug = LineLocalization.getBuggyLine();
+//        }
+
+        CtStatement ctRandLineHasBug = spoonModelObj.getStatementByLineNo(randLineHasBug);
         CtStatement ctRandLineNoBug = spoonModelObj.getStatementByLineNo(randLineNoBug);
-        System.out.println("dong loi : " + randLineHasBug + " la : " + ctRandLineHasBug);
+        //System.out.println("dong loi : " + randLineHasBug + " la : " + ctRandLineHasBug);
         System.out.println("Dong ko loi : " + randLineNoBug + " la : " + ctRandLineNoBug);
         OperationRamdomer randomMutationOp = new OperationRamdomer(null,ctRandLineNoBug,ctRandLineHasBug);
 

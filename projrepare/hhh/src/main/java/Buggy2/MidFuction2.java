@@ -7,6 +7,7 @@ public class MidFuction2 {
             System.out.print(b);
             r = b;
             r = r + 1;
+            r = r - 1;
             return r;
         }
         while(b != 0) {
@@ -15,6 +16,7 @@ public class MidFuction2 {
             }
             else {
                 b = b - a;
+                b = b + a;
             }
         }
         System.out.print(b);

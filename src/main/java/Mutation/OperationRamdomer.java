@@ -30,12 +30,12 @@ public class OperationRamdomer {
             insestBefore.ApplyChange(statementSource,statementModified);
         }
         else if(opSelected == 2) {
-            ReplaceOp replaceOp = new ReplaceOp();
-            replaceOp.ApplyChange(statementSource,statementModified);
-        }
-        else {
             InsertAfter insertAfter =new InsertAfter();
             insertAfter.ApplyChange(statementSource,statementModified);
+        }
+        else {
+            ReplaceOp replaceOp = new ReplaceOp();
+            replaceOp.ApplyChange(statementSource,statementModified);
         }
     }
 

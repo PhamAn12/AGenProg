@@ -38,6 +38,7 @@ public class MidFuction2 {
             output += java.lang.String.format("%d\n", store);
             number = number / 10;
             i++;
+            break;
             if (number == 0) {
                 output += java.lang.String.format("That\'s all, have a nice day!\n");
                 break;

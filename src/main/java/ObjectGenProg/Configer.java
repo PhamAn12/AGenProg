@@ -14,8 +14,17 @@ public class Configer {
 
     private int numOfGeneration;
     private float mutationRate;
-    private String pathToTestFile;
 
+    public int getBuggyLine() {
+        return buggyLine;
+    }
+
+    public void setBuggyLine(int buggyLine) {
+        this.buggyLine = buggyLine;
+    }
+
+    private String pathToTestFile;
+    private int buggyLine;
     public String getPathToProject() {
         return pathToProject;
     }

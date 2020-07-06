@@ -20,18 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a7f26ec-fc80-403e-833f-54d9084667bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/GzFaulocalization/LineLocalization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../digitsc5d8/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/.idea/digitsc5d8.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../digitsc5d8/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../digitsc5d8/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/hhh.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../digitsc5d8/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/src/main/java/Buggy/MidFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/src/main/java/Buggy/heloo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/src/main/java/Buggy2/MidFuction2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../digitsc5d8/src/main/java/Buggy2/MidFuction2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/src/main/java/NoBuggy/NoBuggyClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/src/test/java/TestBuggy/TestMidFuction1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../digitsc5d8/src/test/java/TestBuggy2/TestMidFuction2.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestBuggy2/TestMidFuction2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestBuggy2/TestMidFuction2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestBuggy2/TestMidFuction2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestBuggy2/TestMidFuction2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestBuggy/TestMidFuction1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestBuggy2/TestMidFuction2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Buggy2/MidFuction2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Buggy2/MidFuction2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Buggy2/MidFuction2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Buggy2/MidFuction2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/AutoGenerateFolder/Buggy2/MidFuction2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/AutoGenerateFolder/Buggy2/MidFuction2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/AutoGenerateFolder/CrosOver/child.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/AutoGenerateFolder/CrosOver/child.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/AutoGenerateFolder/CrosOver/parent1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/AutoGenerateFolder/CrosOver/parent1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/AutoGenerateFolder/CrosOver/parent2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/AutoGenerateFolder/CrosOver/parent2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/java/Config" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/Config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/java/GzFaulocalization/Faulocalizator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/GzFaulocalization/Faulocalizator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/java/Population/AutoAddFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/Population/AutoAddFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../target/classes/GzFaulocalization/Faulocalizator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/GzFaulocalization/Faulocalizator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/Mutation/OperationRamdomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/Mutation/OperationRamdomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/ObjectGenProg/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/ObjectGenProg/ConfigController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/Population/MatingPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/Population/MatingPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/Population/MutationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/Population/MutationController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +140,9 @@
       <workItem from="1592913004496" duration="974000" />
       <workItem from="1592992529452" duration="85000" />
       <workItem from="1592994786285" duration="124000" />
+      <workItem from="1594008826299" duration="635000" />
+      <workItem from="1594017754482" duration="797000" />
+      <workItem from="1594018716122" duration="751000" />
     </task>
     <servers />
   </component>
@@ -145,22 +162,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="227" key="GridCell.Tab.0.bottom" timestamp="1592994911283">
+    <state width="1323" height="270" key="GridCell.Tab.0.bottom" timestamp="1594018564979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592994911283" />
-    <state width="1323" height="227" key="GridCell.Tab.0.center" timestamp="1592994911282">
+    <state width="1323" height="270" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594018564979" />
+    <state width="1323" height="270" key="GridCell.Tab.0.center" timestamp="1594018564963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592994911282" />
-    <state width="1323" height="227" key="GridCell.Tab.0.left" timestamp="1592994911282">
+    <state width="1323" height="270" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594018564963" />
+    <state width="1323" height="270" key="GridCell.Tab.0.left" timestamp="1594018564963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592994911282" />
-    <state width="1323" height="227" key="GridCell.Tab.0.right" timestamp="1592994911282">
+    <state width="1323" height="270" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594018564963" />
+    <state width="1323" height="270" key="GridCell.Tab.0.right" timestamp="1594018564979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592994911282" />
+    <state width="1323" height="270" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594018564979" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1594017888941">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594017888941" />
   </component>
   <component name="masterDetails">
     <states>
